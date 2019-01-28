@@ -1,0 +1,4 @@
+maroon = 6B261C
+teal   = 2B5461
+yellow = F9DA78
+blue   = 232A6C
