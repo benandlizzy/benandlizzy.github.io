@@ -15,6 +15,9 @@
 
 :root {
   --main-color: #2B5461;
+  --teal: #2B5461;
+  --yellow: #F9DA78;
+  --maroon: #6B261C;
 }
 
 html {
@@ -68,6 +71,51 @@ h3, .text-intro-wrap .text-intro h2 {
 
 h4 {
   font-size: 1.414em;
+}
+
+.tl-header {
+  font-size: 1.414em;
+  color: #2B5461;
+  text-align: center;
+  padding-left: 1em;
+  position: relative;
+  border-left: 2px dotted var(--main-color);
+}
+
+.tl-item {
+  padding-left: 1em;
+  position: relative;
+  border-left: 2px solid var(--main-color);
+}
+
+.tl-item::after {
+  width: 10px;
+  height: 10px;
+  display: block;
+  top: 0.6em;
+  position: absolute;
+  left: -6px;
+  border-radius: 10px;
+  content: '';
+  border: 2px solid var(--maroon);
+  background: white;
+}
+
+.tl-time {
+  color: var(--maroon);
+  font-weight: bold;
+}
+
+.tl-info {
+  color: var(--main-color);
+}
+
+.tl-info::before {
+  content: " \2022  ";
+}
+
+.tl-info::after {
+  content: " \2022  ";
 }
 
 .list-header {
@@ -499,12 +547,12 @@ a:hover, a:focus, a:active {
 }
 
 .probootstrap-navbar.scrolled .navbar-nav > li.active > a {
-  color: #6B261C !important;
+  color: var(--maroon) !important;
 }
 
 @media screen and (max-width: 768px) {
   .probootstrap-navbar.scrolled .navbar-nav > li.active > a {
-    color: #6B261C !important;
+    color: var(--maroon) !important;
   }
 }
 
@@ -1365,7 +1413,7 @@ a:hover, a:focus, a:active {
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: .2em;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--yellow);
 }
 
 .mfp-fade.mfp-bg {
