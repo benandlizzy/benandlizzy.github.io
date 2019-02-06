@@ -9,6 +9,23 @@
     <link rel="stylesheet" href="css/styles-merged.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="js/scripts.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+      $( document ).ready(function() {
+        $('#arrival').hide()
+        $('input[type=radio][name=status]').change(function() {
+          if (this.value == 'yes') {
+            $('#arrival').fadeIn(200);
+          }
+          else if (this.value == 'no') {
+            $('#arrival').fadeOut(200);
+          }
+        });
+      });
+    </script>
+
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
@@ -80,8 +97,13 @@
               </figure>
               <span class="probootstrap-caption" style="color: #6B261C">The Groom</span>
               <h2 class="text-center">Ben Nye</h2>
-              <p>Born in beautiful Fairbanks, Alaska (the golden heart of the interior)</p>
-    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth question ran over her cheek, then she continued her way.</p>
+              <p>Born in beautiful Fairbanks, Alaska (the golden heart of the interior), Ben grew up playing in the snow, reading books, and daydreaming about fantastical worlds. His parents instilled in him a curiosity about the way the world works, a love of quiet and the outdoors, and a strong independant streak.</p>
+              <p>After highschool, his interest in education took the lead and he moved across the country to the 'burbs of Philadelphia to attend Swarthmore College where he majored in computer science. He spent the next decade embroiled in a series of pursuits: statisical modeling of particle simulations, a masters degree from Penn, and machine learning research for predicting exchange rates.</p>
+              <br>
+              <p>Just after returning to Philly for his masters, Lizzy's world intersected with his for the first time. As their list of mutual friends grew (by way of playing more ultimate frisbee), they continued to be involved in an increasing number of social events - parties, outings, activies. Unfortunately, they never ended up spending all that much time in more intimate settings... until Ben decided to move to Boston to pursue a PhD.</p>
+              <p>In the last two months of his stint in Philly, Ben finally managed to connect with Lizzy in closer settings that gave him a chance to get to know just how warm, loving, playful, entertaining, intelligent, and overall awesome she is. It turns out that girls aren't always scary, and at the risk of letting the oportunity of a lifetime pass him by, Ben finally asked Lizzy on a date just after moving 360 miles away.
+              </p>
+              <p>Better late than never...</p>
             </div>
 
             <div class="probootstrap-divider probootstrap-animate"><span>&amp;</span></div>
@@ -262,7 +284,6 @@
         <div class="row mb40">
           <div class="col-md-12 text-center">
             <h2 class="mt0 mb10 probootstrap-animate">Will you attend?</h2>
-            <p>Please sign your RSVP</p>
           </div>
         </div>
         <div class="row">
@@ -279,8 +300,14 @@
                 </div>
                 <div class="form-group">
                   <p>Will you attend?</p>
-                  <label for="yes"><input type="checkbox" name="yes" id="yes"> Yes, I will be there</label> <br>
-                  <label for="no"><input type="checkbox" name="no" id="no"> Sorry, I can't come</label> <br>
+                  <input type="radio" name="status" value="yes" id="yes"><label for="yes" id="yes_label"> Yes, I will be there</label>
+                  <span id="arrival">
+                    <input type="radio" name="status" value="fri" id="friday"><label for="friday"> Friday</label>
+                    <input type="radio" name="status" value="sat" id="saturday"><label for="saturday"> Saturday</label>
+                  </span>
+                  <br>
+                  <label for="no"><input type="radio" name="status" value="no"> Sorry, I can't come</label>
+                  <br>
                 </div>
                 <div class="form-group">
                   <label for="note">Note</label>
@@ -296,9 +323,6 @@
       </div>
     </section>
 
-
-    <script src="js/scripts.min.js"></script>
-    <script src="js/custom.js"></script>
 
   </body>
 </html>

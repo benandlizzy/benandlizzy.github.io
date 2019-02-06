@@ -48,6 +48,10 @@ body {
   color: #ffffff;
 }
 
+input[type="radio"] {
+  margin-right: 5px;
+}
+
 h1, h2, h3, .text-intro-wrap .text-intro h2, h4 {
   margin: 1.414em 0 0.5em;
   font-weight: 900;
