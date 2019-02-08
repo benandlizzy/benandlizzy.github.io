@@ -17,10 +17,12 @@
         $('#arrival').hide()
         $('input[type=radio][name=status]').change(function() {
           if (this.value == 'yes') {
-            $('#arrival').fadeIn(200);
+            $('#yes_label').html('Yes, I will be there, arriving on ');
+            $('#arrival').show();
           }
           else if (this.value == 'no') {
-            $('#arrival').fadeOut(200);
+            $('#yes_label').html('Yes, I will be there');
+            $('#arrival').hide();
           }
         });
       });
@@ -54,7 +56,7 @@
             <li><a href="#" data-nav-section="wedding">Location &amp; Schedule</a></li>
             <li><a href="#" data-nav-section="travel">Lodging &amp; Travel</a></li>
             <li><a href="#" data-nav-section="rsvp">RSVP</a></li>
-            <!--<li><a href="#" data-nav-section="rsvp">RSVP</a></li>-->
+            <li><a href="#" data-nav-section="registry">Registry</a></li>
           </ul>
         </div>
       </div>
@@ -97,13 +99,16 @@
               </figure>
               <span class="probootstrap-caption" style="color: #6B261C">The Groom</span>
               <h2 class="text-center">Ben Nye</h2>
-              <p>Born in beautiful Fairbanks, Alaska (the golden heart of the interior), Ben grew up playing in the snow, reading books, and daydreaming about fantastical worlds. His parents instilled in him a curiosity about the way the world works, a love of quiet and the outdoors, and a strong independant streak.</p>
-              <p>After highschool, his interest in education took the lead and he moved across the country to the 'burbs of Philadelphia to attend Swarthmore College where he majored in computer science. He spent the next decade embroiled in a series of pursuits: statisical modeling of particle simulations, a masters degree from Penn, and machine learning research for predicting exchange rates.</p>
-              <br>
-              <p>Just after returning to Philly for his masters, Lizzy's world intersected with his for the first time. As their list of mutual friends grew (by way of playing more ultimate frisbee), they continued to be involved in an increasing number of social events - parties, outings, activies. Unfortunately, they never ended up spending all that much time in more intimate settings... until Ben decided to move to Boston to pursue a PhD.</p>
-              <p>In the last two months of his stint in Philly, Ben finally managed to connect with Lizzy in closer settings that gave him a chance to get to know just how warm, loving, playful, entertaining, intelligent, and overall awesome she is. It turns out that girls aren't always scary, and at the risk of letting the oportunity of a lifetime pass him by, Ben finally asked Lizzy on a date just after moving 360 miles away.
-              </p>
-              <p>Better late than never!</p>
+              <p>Born in beautiful Fairbanks, Alaska (the golden heart of the interior), Ben grew up playing in the snow, reading books, and daydreaming about fantastical worlds. His parents instilled in him a curiosity about the way the world works, a love of quiet and the outdoors, and a strong independent streak.
+ 
+              <p>After high school, his interest in education took the lead and he moved across the country to the 'burbs of Philadelphia to attend Swarthmore College where he majored in computer science. He spent the next decade embroiled in a series of pursuits: statistical modeling of particle simulations, a master’s degree from Penn, and machine learning research for predicting exchange rates.
+ 
+              <p>Just after returning to Philly for his master’s degree, Lizzy's world intersected with his for the first time when they joined the same ultimate frisbee team. As their list of mutual friends grew (by way of playing more ultimate frisbee), they continued to be involved in an increasing number of social events - parties, outings, activities. Unfortunately, they never ended up spending all that much time in more intimate settings... until Ben decided to move to Boston to pursue a Ph.D.
+ 
+              <p>In the last two months of his stint in Philly, Ben finally managed to connect with Lizzy in closer settings that gave him a chance to get to know just how warm, loving, playful, entertaining, intelligent, and overall awesome she is. It turns out that girls aren't always scary, and at the risk of letting the opportunity of a lifetime pass him by, Ben finally asked Lizzy on a date just after moving 360 miles away.
+
+              <p>Better late than never...</p>
+
             </div>
 
             <div class="probootstrap-divider probootstrap-animate"><span>&amp;</span></div>
@@ -114,8 +119,16 @@
               </figure>
               <span class="probootstrap-caption" style="color: #6B261C">The Bride</span>
               <h2 class="text-center">Lizzy Wagoner</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-    <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+
+              <p>Lizzy is from Brookfield, Illinois, a Chicago suburb and home of the world’s greatest zoo. Her mother is a British ballerina and her father is a photographer from Chicagoland. Lizzy grew up spending most of her time dancing at her mother’s studio. When she graduated from high school, she moved to Indianapolis to attend Butler University with her twin. There she majored in dance, Spanish, and chemistry (a very useful combination), studied abroad in Chile, and ran on the university’s track team. At the end of her four-year tenure, she decided to focus her studies on chemistry and began a Ph.D. program at Indiana University.</p>
+ 
+              <p>After becoming Dr. Wagoner, she accepted a position with ExxonMobil and moved to Philadelphia with her two dogs. In a new place with a new job, she decided to meet new people by trying a new hobby. She met Ben playing ultimate frisbee and found him to be a very cute, smart, and entertaining fella. All of her flirting and hangout invitations seemed to go about eight feet over his head, but over the course of four years and many Twister duels they developed a good friendship.</p>
+               
+              <p>Then, one day out of the blue, Ben took the leap and asked Lizzy out on a date. Unfortunately, he had moved to Boston and dating was no longer easy.  Their first date was a three-day backpacking trip along the Appalachian Trail and Ben brought a 2 lb bag of Hershey’s kisses and a 3 lb block of cheese.</p>
+               
+              <p>A little over a year of alternating weekends between Philadelphia and Boston, Lizzy moved to Beantown. On the way from Philadelphia to Boston, Ben took a detour to show her his alma mater. While walking through the forest preserve on Swarthmore’s campus, Ben stopped at an overlook, got down on one knee, and popped the question. Lizzy said YES and is honored to wear Grandma Fran Nye’s ring.</p>
+
+
             </div>
 
           </div>
@@ -134,7 +147,8 @@
               </figure>
               <span class="probootstrap-caption" style="color: #F9DA78">Twin of Honor</span>
               <h2 class="text-center">Amy Boyd</h2>
-              <p>Well, you can probably guess a bit about her childhood. She was always the gregarious, adventurous one. While Ben spent his time daydreaming, Amy was off making friends and finding new experiences. Never one to conform to what everyone else was doing, Amy went off to Evergreen College in Washington state where she studied ecology, botany, and biology. She found herself spending summers doing research on the north slope of Alaska while battling ravenous flocks of mosquitos, and spending her free time exploring Alaska's riverways.</p>
+              <p>Well, you can probably guess a bit about her childhood. She was always the gregarious, adventurous one. While Ben spent his time daydreaming, Amy was off making friends and finding new experiences. Never one to conform to what everyone else was doing, Amy went off to Evergreen College in Washington state where she studied ecology, botany, and biology.</p>
+              <p>She found herself spending summers doing research on the north slope of Alaska while battling ravenous flocks of mosquitos, and spending her free time exploring Alaska's riverways.</p>
               <p>She managed to find a partner who shared her love of boating and exploration, and as a bonus they fell madly in love. Amy married her husband in 2013, and just welcomed her second child in to the world in January. Don't think for a second that she's slowed down - we're pretty sure her kids are going to be part river otter.</p>
             </div>
 
@@ -146,8 +160,12 @@
               </figure>
               <span class="probootstrap-caption" style="color: #F9DA78">Twin of Honor</span>
               <h2 class="text-center">Zoe Dohnal</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-    <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+              <p>Although it was a tough decision, Lizzy choose Zoe to be her Twin of Honor. They became womb mates in 1986 and lived together for the next 22 years. They grew up trying to compliment one in another. Lizzy was considered the “nerdy” one and Zoe was the “fun” one. They swapped places in class, tricked teachers and boyfriends, and conveniently shared a wardrobe. It has always been nice to have a best friend and a sister all in one.</p>
+ 
+              <p>After Lizzy went to graduate school, Zoe began to travel the world. She worked for Crystal Cruises and Adventures by Disney, which allowed her to visit all 7 continents and over 125 countries. After meeting her husband, Zoe planted her roots in Telluride, CO and has been blooming into a successful business woman, friend, and mother.</p>
+               
+              <p>Although Lizzy and Zoe now live 2,000 miles apart, they still talk every day and support each other through all of life’s adventures. Lizzy is grateful to have Zoe stand by her side on her wedding day.</p>
+
             </div>
 
           </div>
@@ -183,14 +201,14 @@
 	            <div class="tl-item">
 	            	<span class="tl-time">09:00 PM</span>
 	            	<span class="tl-info">Trivia!</span>
-	            	<span class="tl-deet">Come show off your knowledge (competitive advantage to those who know us best)</span>
+	            	<span class="tl-deet">Come show off your knowledge (competitive advantage to those who know us best).</span>
 	            </div>
 
 	            <div class="tl-header">Saturday</div>
 	            <div class="tl-item">
 	            	<span class="tl-time">09:00 AM</span>
 	            	<span class="tl-info">Breakfast</span>
-	            	<span class="tl-deet">Roll through the lodge for some grub - breakfast is the most important meal of your day! Menu TBD</span>
+	            	<span class="tl-deet">Roll through the lodge for some grub - breakfast is the most important meal of your day! Menu TBD.</span>
 	            </div>
 	            <div class="tl-item">
 	            	<span class="tl-time">11:00 AM</span>
@@ -265,9 +283,10 @@
           	<div class="text-center"><h3>Things To Do</h3></div>
           	<p>Hiking around the lodge. Cardigan Lodge's primary purpose is to serve as an access point to an awesome network of trails. Bring some hiking shoes and don't miss out!</p>
             <p><img src="img/tmp/hiking.png" alt="" class="img-responsive img-rounded"></p>
-            <p>Sport climbing at Rumney Rocks. 45 minutes from the location is one of New Englands most popular sport climbing spots. The general store in Rumney also has awesome icecream.</p>
-            <p>The <a href="https://www.funspotnh.com/" target="_blank" style="color: #F9DA78;">Largest Arcand in the World</a>. Who knows - it sounds wacky.</p>
-            <p>Pop in to the neighboring town of Bristol, NH (home of the legendary Whipple House B&amp;B). There's a little <a href="https://www.yelp.com/biz/shacketts-brewing-company-bristol" target="_blank" style="color: #F9DA78;">brewery</a>, places to eat, and more.</p>
+            <p>Sport climbing at <a href="https://www.mountainproject.com/area/105867829/rumney" target="_blank" style="color: #F9DA78;">Rumney Rocks</a>, one of New Englands most popular sport climbing spots. The general store in Rumney also has awesome icecream.</p>
+            <p>The <a href="https://www.funspotnh.com/" target="_blank" style="color: #F9DA78;">Largest Arcade in the World</a>. Who knows - it sounds wacky.</p>
+            <p>Pop in to the neighboring town of Bristol, NH (home of the legendary Whipple House B&amp;B). There's a little <a href="https://www.yelp.com/biz/shacketts-brewing-company-bristol" target="_blank" style="color: #F9DA78;">brewery</a>, a <a href="http://www.newfoundlakevineyards.com/wine-list" target="_blank" style="color: #F9DA78;">vineyard</a>, and more.</p>
+            <p>Pick fresh apples right off the branch just down the road at <a href="http://www.cardiganmtnorchard.com/our-apple-orchard/" target="_blank" style="color: #F9DA78;">Cardigan Mountain Orchard.</a>
           </div>
         </div>
       </div>
@@ -286,11 +305,11 @@
             <div class="probootstrap-card probootstrap-animate">
               <form class="probootstrap-form" action="https://formspree.io/bepnye@gmail.com" method="POST">
                 <div class="form-group">
-                  <label for="name">Your Name</label>
+                  <label for="name">Name(s)</label>
                   <input type="text" class="form-control" name="name" id="name">
                 </div>
                 <div class="form-group">
-                  <label for="email">Your Email</label>
+                  <label for="email">Email(s)</label>
                   <input type="email" class="form-control" name="_replyto" id="email">
                 </div>
                 <div class="form-group">
@@ -315,10 +334,17 @@
             </div>
           </div>
         </div>
-        <div class="col-md-12 text-center" style="padding-top: 70px;">
-          <p>For guests wishing to contribute, we have created a <a href="https://www.myregistry.com/wedding-registry/Ben-Nye-and-Lizzy-Wagoner-Boston-MA/1830438" target="_blank">gift registry</a> with some ideas!</p>
-        </div>
       </div>
+    </section>
+
+    <section class="probootstrap-section" data-section="registry">
+      <div class="container">
+        <div class="row mb40" style="border: 2px solid #6B261C;">
+          <div class="col-md-12 text-center" style="padding-top: 70px;">
+            <h2 class="mt0 mb10 probootstrap-animate">Registry</h2>
+            <p>For guests wishing to contribute, we have created a <a href="https://www.myregistry.com/wedding-registry/Ben-Nye-and-Lizzy-Wagoner-Boston-MA/1830438" target="_blank">gift registry</a> with some ideas!</p>
+          </div>
+        </div>
     </section>
 
   </body>
