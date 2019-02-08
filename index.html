@@ -14,15 +14,16 @@
 
     <script>
       $( document ).ready(function() {
+        var fadeTime = 100;
         $('#arrival').hide()
         $('input[type=radio][name=status]').change(function() {
           if (this.value == 'yes') {
-            $('#yes_label').html('Yes, I will be there, arriving on ');
-            $('#arrival').show();
+            $('#yes_label').text('Yes, I will be there, arriving on ').fadeIn(fadeTime);
+            $('#arrival').fadeIn(fadeTime);
           }
           else if (this.value == 'no') {
-            $('#yes_label').html('Yes, I will be there');
-            $('#arrival').hide();
+            $('#yes_label').html('Yes, I will be there').fadeIn(fadeTime);
+            $('#arrival').fadeOut(fadeTime);
           }
         });
       });
@@ -173,7 +174,7 @@
       </div>
     </section>
 
-    <section class="probootstrap-section-color" data-section="wedding">
+    <section class="probootstrap-section" data-section="wedding">
       <div class="container">
         <div class="row">
           <div class="col-md-6 probootstrap-animate">
@@ -186,73 +187,75 @@
           </div>
           <div class="col-md-6 probootstrap-animate">
             <h2 class="text-center">Wedding Timeline</h2>
-          	<div class="tl-box">
-	            <div class="list-header">Friday</div>
-	            <div class="tl-item">
-	            	<span class="tl-time">03:00 PM</span>
-	            	<span class="tl-info">Lodge opens</span>
-	            	<span class="tl-deet">Everyone is welcome to come hang out and get festive.</span>
-	            </div>
-	            <div class="tl-item">
-	            	<span class="tl-time">06:00 PM</span>
-	            	<span class="tl-info">Rehearsal dinner</span>
-	            	<span class="tl-deet">Open event; anyone who would like to join us is invited to do so!</span>
-	            </div>
-	            <div class="tl-item">
-	            	<span class="tl-time">09:00 PM</span>
-	            	<span class="tl-info">Trivia!</span>
-	            	<span class="tl-deet">Come show off your knowledge (competitive advantage to those who know us best).</span>
-	            </div>
+            <div class="tl-box">
+              <div class="list-header">Friday</div>
+              <div class="tl-item">
+                <span class="tl-time">03:00 PM</span>
+                <span class="tl-info">Lodge opens</span>
+                <span class="tl-deet">Everyone is welcome to come hang out and get festive.</span>
+              </div>
+              <div class="tl-item">
+                <span class="tl-time">06:00 PM</span>
+                <span class="tl-info">Rehearsal dinner</span>
+                <span class="tl-deet">Open event; anyone who would like to join us is invited to do so!</span>
+              </div>
+              <div class="tl-item">
+                <span class="tl-time">09:00 PM</span>
+                <span class="tl-info">Trivia!</span>
+                <span class="tl-deet">Come show off your knowledge (competitive advantage to those who know us best).</span>
+              </div>
 
-	            <div class="tl-header">Saturday</div>
-	            <div class="tl-item">
-	            	<span class="tl-time">09:00 AM</span>
-	            	<span class="tl-info">Breakfast</span>
-	            	<span class="tl-deet">Roll through the lodge for some grub - breakfast is the most important meal of your day! Menu TBD.</span>
-	            </div>
-	            <div class="tl-item">
-	            	<span class="tl-time">11:00 AM</span>
-	            	<span class="tl-info">Lawn games &amp; relaxing</span>
-	            	<span class="tl-deet">Expect an ultimate frisbee game.</span>
-	            </div>
-	            <div class="tl-item">
-	            	<span class="tl-time">12:30 PM</span>
-	            	<span class="tl-info">Lunch!</span>
-	            	<span class="tl-deet">Partying is hard work; replenish your energy Menu TBD.</span>
-	            </div>
-	            <div class="tl-item">
-	            	<span class="tl-time">03:30 PM</span>
-	            	<span class="tl-info">The Big One</span>
-	            	<span class="tl-deet">The Ceremony. The Point of no Return. Shoes optional.</span>
-	            </div>
-	            <div class="tl-item">
-	            	<span class="tl-time">05:30 PM</span>
-	            	<span class="tl-info">Dinner/Reception</span>
-	            	<span class="tl-deet">Family style dining in the lodge. Menu TBD.</span>
-	            	</div>
-	            <div class="tl-item">
-	            	<span class="tl-time">07:00 PM</span>
-	            	<span class="tl-info">Party all night!</span>
-	            	<span class="tl-deet">We'll push the tables out of the way to make room for music, dancing, and merry-making until the wee hours.</span>
-	            </div>
+              <br>
+              <div class="tl-header">Saturday</div>
+              <div class="tl-item">
+                <span class="tl-time">09:00 AM</span>
+                <span class="tl-info">Breakfast</span>
+                <span class="tl-deet">Roll through the lodge for some grub - breakfast is the most important meal of your day!</span>
+              </div>
+              <div class="tl-item">
+                <span class="tl-time">11:00 AM</span>
+                <span class="tl-info">Lawn games &amp; relaxing</span>
+                <span class="tl-deet">Expect an ultimate frisbee game.</span>
+              </div>
+              <div class="tl-item">
+                <span class="tl-time">12:30 PM</span>
+                <span class="tl-info">Lunch!</span>
+                <span class="tl-deet">Partying is hard work; replenish your energy</span>
+              </div>
+              <div class="tl-item">
+                <span class="tl-time">03:30 PM</span>
+                <span class="tl-info">The Big One</span>
+                <span class="tl-deet">The Ceremony. The Point of no Return. Shoes optional.</span>
+              </div>
+              <div class="tl-item">
+                <span class="tl-time">05:30 PM</span>
+                <span class="tl-info">Dinner/Reception</span>
+                <span class="tl-deet">Family style dining in the lodge.</span>
+                </div>
+              <div class="tl-item">
+                <span class="tl-time">07:00 PM</span>
+                <span class="tl-info">Party all night!</span>
+                <span class="tl-deet">We'll push the tables out of the way to make room for music, dancing, and merry-making until the wee hours.</span>
+              </div>
               <div class="tl-item">
                 <span class="tl-time">11:45 PM</span>
                 <span class="tl-info">Late Night Snacks</span>
                 <span class="tl-deet">Nobody likes to go to sleep on an empty stomach, so we've got you covered.</span>
               </div>
 
-	            <div class="tl-header">Sunday</div>
-	            <div class="tl-item">
-	            	<span class="tl-time">09:00 AM</span>
-	            	<span class="tl-info">Breakfast/brunch</span>
-	            	<span class="tl-deet">There will be tasty food to cure whatever ails you, buffet style for your leisure and convenience. Served until checkout.</span>
-	            </div>
-	            <div class="tl-item">
-	            	<span class="tl-time">11:00 AM</span>
-	            	<span class="tl-info">Transform and check out</span>
-	            	<span class="tl-deet">We have to give them their lodge back, but enjoy the area and surrounding trails!</span>
-	            </div>
-	          </div>
+              <br>
+              <div class="tl-header">Sunday</div>
+              <div class="tl-item">
+                <span class="tl-time">09:00 AM</span>
+                <span class="tl-info">Breakfast/brunch</span>
+                <span class="tl-deet">There will be tasty food to cure whatever ails you, buffet style for your leisure and convenience. Served until checkout.</span>
+              </div>
+              <div class="tl-item">
+                <span class="tl-time">11:00 AM</span>
+                <span class="tl-info">Transform and check out</span>
+                <span class="tl-deet">We have to give them their lodge back, but enjoy the area and surrounding trails!</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -276,14 +279,14 @@
           <div class="col-md-6 probootstrap-animate">
             <h2 class="text-center">Travel</h2>
 
-	          <p>All festivities for the weekend will take place on location at Cardigan Lodge. Although making it to the lodge takes some effort, once you arrive you're free to put your feet up (or boots on the trail) and enjoy the area of the course of the event.</p>
-          	<div class="text-center"><h3>Getting There</h3></div>
+            <p>All festivities for the weekend will take place on location at Cardigan Lodge. Although making it to the lodge takes some effort, once you arrive you're free to put your feet up (or boots on the trail) and enjoy the area of the course of the event.</p>
+            <div class="text-center"><h3>Getting There</h3></div>
             <p><a href="https://www.google.com/maps/place/AMC+Cardigan+Lodge/@43.7196366,-72.0420081,10z/data=!4m5!3m4!1s0x4cb3562e195bcb47:0x20def3359150bd6!8m2!3d43.6497852!4d-71.8778923" target="_blank" style="color: #F9DA78;">Cardigan Lodge</a> is located an hour drive from either <a href="https://goo.gl/maps/hdkQTfFjxVv" target="_blank" style="color: #F9DA78;">Lebanon Municipal Airport</a> or <a href="https://goo.gl/maps/jx5QoRaxNuR2" target="_blank" style="color: #F9DA78;">Manchester-Boston Regional Airport</a>. Alternatively, the main <a href="https://goo.gl/maps/NaCzb7EtFVC2" target="_blank" style="color: #F9DA78;">Boston airport</a> is still only a two hour drive.</p>
             <p>We are currently considering creating a schedule so that interested parties can coordinate to share a car rental if interested. Details forthcoming!</p>
-          	<div class="text-center"><h3>Things To Do</h3></div>
-          	<p>Hiking around the lodge. Cardigan Lodge's primary purpose is to serve as an access point to an awesome network of trails. Bring some hiking shoes and don't miss out!</p>
+            <div class="text-center"><h3>Things To Do</h3></div>
+            <p>Hiking around the lodge. Cardigan Lodge's primary purpose is to serve as an access point to an awesome network of trails. Bring some hiking shoes and don't miss out!</p>
             <p><img src="img/tmp/hiking.png" alt="" class="img-responsive img-rounded"></p>
-            <p>Sport climbing at <a href="https://www.mountainproject.com/area/105867829/rumney" target="_blank" style="color: #F9DA78;">Rumney Rocks</a>, one of New Englands most popular sport climbing spots. The general store in Rumney also has awesome icecream.</p>
+            <p>Sport climbing at <a href="https://www.mountainproject.com/area/105867829/rumney" target="_blank" style="color: #F9DA78;">Rumney Rocks</a>, one of New Englands most popular sport climbing spots. The general store in Rumney also has awesome ice cream.</p>
             <p>The <a href="https://www.funspotnh.com/" target="_blank" style="color: #F9DA78;">Largest Arcade in the World</a>. Who knows - it sounds wacky.</p>
             <p>Pop in to the neighboring town of Bristol, NH (home of the legendary Whipple House B&amp;B). There's a little <a href="https://www.yelp.com/biz/shacketts-brewing-company-bristol" target="_blank" style="color: #F9DA78;">brewery</a>, a <a href="http://www.newfoundlakevineyards.com/wine-list" target="_blank" style="color: #F9DA78;">vineyard</a>, and more.</p>
             <p>Pick fresh apples right off the branch just down the road at <a href="http://www.cardiganmtnorchard.com/our-apple-orchard/" target="_blank" style="color: #F9DA78;">Cardigan Mountain Orchard.</a>
@@ -295,9 +298,9 @@
     <section class="probootstrap-section probootstrap-border-top" data-section="rsvp">
       <div class="container">
         <div class="row mb40">
-          <div class="col-md-12 text-center">
-            <h2 class="mt0 mb10 probootstrap-animate">Will you attend?</h2>
-            <p>Due to strict space constraints at our venue, we are unable to accomodate children. If this limitation greatly impedes your ability to join us (we know there are several young babies), let us know and we will do our best to figure something out. We will set up a nursing / baby area in the lodge, and if you have other questions or concerns please ask!</p>
+          <div class="col-md-12 text-center probootstrap-animate  ">
+            <h2 class="mt0 mb10">Will you attend?</h2>
+            <p>Due to strict space constraints at our venue, we are unable to accomodate children. If this limitation greatly impedes your ability to join us (we know there are several young babies), let us know and we will do our best to figure something out.</p>
           </div>
         </div>
         <div class="row">
@@ -315,9 +318,11 @@
                 <div class="form-group">
                   <p>Will you attend?</p>
                   <input type="radio" name="status" value="yes" id="yes"><label for="yes" id="yes_label"> Yes, I will be there</label>
-                  <span id="arrival">
-                    <input type="radio" name="status" value="fri" id="friday"><label for="friday"> Friday</label>
-                    <input type="radio" name="status" value="sat" id="saturday"><label for="saturday"> Saturday</label>
+                  <br>
+                  <span id="arrival" style="margin-left: 1.5em;">
+                    <input type="radio" name="arrival" value="unk" id="unknown"><label for="unknown"> Unknown</label>
+                    <input type="radio" name="arrival" value="fri" id="friday"><label for="friday"> Friday</label>
+                    <input type="radio" name="arrival" value="sat" id="saturday"><label for="saturday"> Saturday</label>
                   </span>
                   <br>
                   <label for="no"><input type="radio" name="status" value="no"> Sorry, I can't come</label>
@@ -339,7 +344,7 @@
 
     <section class="probootstrap-section" data-section="registry">
       <div class="container">
-        <div class="row mb40" style="border: 2px solid #6B261C;">
+        <div class="row mb40 probootstrap-animate" style="border: 2px solid #6B261C;">
           <div class="col-md-12 text-center" style="padding-top: 70px;">
             <h2 class="mt0 mb10 probootstrap-animate">Registry</h2>
             <p>For guests wishing to contribute, we have created a <a href="https://www.myregistry.com/wedding-registry/Ben-Nye-and-Lizzy-Wagoner-Boston-MA/1830438" target="_blank">gift registry</a> with some ideas!</p>
