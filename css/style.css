@@ -48,6 +48,13 @@ body {
   color: #ffffff;
 }
 
+.registry-card {
+  border: 2px solid #6B261C;
+  padding-bottom: 3em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
 input[type="radio"] {
   margin-right: 5px;
 }
