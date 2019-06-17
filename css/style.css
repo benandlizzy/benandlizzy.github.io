@@ -48,8 +48,13 @@ body {
   color: #ffffff;
 }
 
+.modal-group {
+  border: 1px solid var(--maroon);
+  padding: 5px 10px 5px 10px;
+}
+
 .registry-card {
-  border: 2px solid #6B261C;
+  border: 2px solid var(--maroon);
   padding-bottom: 3em;
   padding-left: 2em;
   padding-right: 2em;
@@ -57,6 +62,7 @@ body {
 
 input[type="radio"] {
   margin-right: 5px;
+  margin-left: 15px;
 }
 
 h1, h2, h3, .text-intro-wrap .text-intro h2, h4 {

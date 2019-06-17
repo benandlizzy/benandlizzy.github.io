@@ -13,28 +13,162 @@
     <script src="js/custom.js"></script>
 
     <script>
-      $( document ).ready(function() {
+      function createCookie(name, value) {
+        var date = new Date('Oct 7 2019');
+        var expires = "; expires="+date.toGMTString();
+        document.cookie = name+"="+value+expires+"; path=/";
+        console.log(document.cookie);
+      }
+
+      function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1,c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+      }
+
+      function initialize_radios() {
         var fadeTime = 100;
         $('#arrival').hide()
+        $('#housing_preference').hide()
+        $('#follow-up-questions').hide()
+
         $('input[type=radio][name=status]').change(function() {
+          console.log(this);
           if (this.value == 'yes') {
-            $('#yes_label').text('Yes, I will be there, arriving on ').fadeIn(fadeTime);
+            $('#h_yes_label').text('Yes, I will be there, arriving on ').fadeIn(fadeTime);
             $('#arrival').fadeIn(fadeTime);
           }
           else if (this.value == 'no') {
-            $('#yes_label').html('Yes, I will be there').fadeIn(fadeTime);
+            $('#h_yes_label').html('Yes, I will be there').fadeIn(fadeTime);
             $('#arrival').fadeOut(fadeTime);
           }
         });
+        
+        $('input[type=radio][name=housing]').change(function() {
+          console.log(this);
+          if (this.value == 'yes') {
+            $('#h_yes_label').text('Yes, and I would like to stay').fadeIn(fadeTime);
+            $('#housing_preference').fadeIn(fadeTime);
+            $('#housing_preference_spacer').hide();
+          }
+          else if (this.value == 'no') {
+          }
+        });
+
+        $('input[type=radio][name=attending]').change(function() {
+          console.log(this);
+          if (this.value == 'yes') {
+            $('#follow-up-questions').fadeIn(fadeTime);
+          }
+          else if (this.value == 'no') {
+            $('#follow-up-questions').hide();
+          }
+        });
+      }
+
+      function sleep(ms) {
+      }
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      function submitForm() {
+        createCookie('responded', 'yes');
+      }
+
+      async function getInfo() {
+        var responded = readCookie('responded');
+        console.log(responded);
+        console.log(responded == true);
+        if (responded == 'yes') {
+          console.log('Found cookie for responded=yes');
+        } else {
+          await sleep(2000);
+          $("#submit-modal").on('click', submitForm);
+          $("#myModal").modal("show");
+        }
+      }
+
+      $( document ).ready(function() {
+        initialize_radios();
+        getInfo();
       });
+
     </script>
 
-    <!--[if lt IE 9]>
-      <script src="js/vendor/html5shiv.min.js"></script>
-      <script src="js/vendor/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
+
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 style="text-align: center;">Welcome! Please RSVP by filling out this form.</h4>
+        </div>
+        <form class="probootstrap-form" action="https://formspree.io/benandlizzynye@gmail.com" method="POST">
+          <div class="modal-body">
+            <div class="form-group modal-group">
+              <span>Will you be attending?</span>
+              <br />
+              <input type="radio" name="attending" value="yes" id="att_yes"><label for="att_yes"> Yes, I will be there</label>
+              <br />
+              <input type="radio" name="attending" value="no" id="att_no"><label for="att_no"> Sorry, I can't come</label>
+              <br />
+            </div>
+            <div id="follow-up-questions">
+              <div class="form-group modal-group">
+                <span>Will you join us for dinner Friday evening? All are welcome.</span>
+                <br />
+                <input type="radio" name="fri_dinner" value="yes" id="fd_yes"><label for="fd_yes"> Yes, I will be there</label>
+                <br />
+                <input type="radio" name="fri_dinner" value="no" id="fd_no"><label for="fd_no"> Sorry, I can't come</label>
+                <br />
+              </div>
+            
+              <div class="form-group modal-group">
+                <span>Do you need housing?</span>
+                <br />
+                <span style="text-transform: uppercase; font-size: 13px;">Even if you have previously requested housing from us, please reconfirm here!</span>
+                <br />
+                <input type="radio" name="housing" value="yes" id="h_yes"><label for="h_yes" id="h_yes_label">Yes</label>
+                <div id="housing_preference" style="margin-left: 1.5em;">
+                  <input type="radio" name="housing" value="lodge" id="h_lodge"><label for="h_lodge"> in the lodge</label>
+                  <br />
+                  <input type="radio" name="housing" value="bb" id="h_bb"><label for="h_bb"> in a B&amp;B</label>
+                </div>
+                <div id="housing_preference_spacer"></div>
+                <input type="radio" name="housing" value="no" id="h_no"><label for="h_no"> No, I have made other arrangements</label>
+                <br />
+              </div>
+            </div>
+            
+          </div>
+          <div class="modal-footer" style="text-align: left">
+            <div class="form-group">
+              <label for="name">Name(s)</label>
+              <input type="text" class="form-control" name="name" id="name">
+              <label for="note">Dietary Restrictions / Other Requests</label>
+              <textarea name="note" id="note" cols="20" rows="5" class="form-control"></textarea>
+            </div>
+
+            <input id="submit-modal" type="submit" class="btn btn-primary btn-lg" style="text-align: right;" value="Submit">
+          </div>
+        </form>
+			</div>
+
+		</div>
+	</div>
     
     <!-- Fixed navbar -->
      <!-- navbar-fixed-top -->
